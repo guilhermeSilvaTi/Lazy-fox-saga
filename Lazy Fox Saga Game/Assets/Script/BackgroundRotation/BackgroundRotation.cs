@@ -8,9 +8,13 @@ public class BackgroundRotation : MonoBehaviour
     [SerializeField]
     float velocity = 10;
 
+    [SerializeField]
+    GameManager gameManager;
+
     // Update is called once per frame
     void Update()
     {
+        if(gameManager.GetIsActiveGame())
         InputKeyboard();
     }
 
