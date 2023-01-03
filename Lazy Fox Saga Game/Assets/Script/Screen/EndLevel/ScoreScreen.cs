@@ -6,6 +6,7 @@ using TMPro;
 public class ScoreScreen : MonoBehaviour
 {
     int valueScroe;
+
     [SerializeField]
     float timeScore;
 
