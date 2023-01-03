@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
     private int level = 1;
 
     [SerializeField]
-    private GameObject windowsEndGame;
+    private Player player;
 
     [SerializeField]
-    private Player player;
+    private MainCamera mainCamera;
 
     private bool isActiveGame = true;
 
@@ -20,10 +20,11 @@ public class GameManager : MonoBehaviour
     public void SetLevel(int value) { level = value; }
     public int GetLevel() { return level;}
 
-    public void EndGame()
+    public IEnumerator EndGame()
     {
         SetIsActiveGame(false);
         player.StopPlayer();
-        windowsEndGame.SetActive(true);
+        yield return new WaitForSeconds(1.0f);
+        mainCamera.EndGameActive();
     }
 }

@@ -16,6 +16,7 @@ public class Coin : MonoBehaviour
 
     private void DisabledCoin()
     {
+        StatesGame.SetScore(coinValue);
         this.gameObject.SetActive(false);
     }
 }
