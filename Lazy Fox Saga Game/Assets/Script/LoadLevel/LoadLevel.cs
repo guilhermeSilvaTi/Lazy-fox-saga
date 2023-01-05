@@ -8,21 +8,40 @@ public class LoadLevel : MonoBehaviour
     [SerializeField]
     GameManager gameManager;
 
-    private const  string SCENELOAD = "Lvel0";
+    bool isActive = false;
+
+    private const string SCENELOAD = "Level0";
     private const string MAP = "MapScene";
+    private const string MENU = "MainMenu";
 
     public void NewLevel()
     {
-        SceneManager.LoadSceneAsync(SCENELOAD + (gameManager.GetLevel() +1));
+        CallOtherLevel(SCENELOAD + (gameManager.GetLevel() + 1));
     }
     public void RepeatLevel()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        CallOtherLevel(SceneManager.GetActiveScene().name);   
     }
     public void MapLevel()
     {
-        SceneManager.LoadSceneAsync(MAP);
-
+        CallOtherLevel(MAP);
+    }
+    public void MenuLevel()
+    {
+        CallOtherLevel(MENU);
     }
 
+    public void CallLevel(int valueLevel)
+    {
+        CallOtherLevel(SCENELOAD + valueLevel);     
+    }
+
+    private void CallOtherLevel(string nameLevel)
+    {
+        if (!isActive)
+        {
+            isActive = true;
+            SceneManager.LoadSceneAsync(nameLevel);
+        }
+    }
 }

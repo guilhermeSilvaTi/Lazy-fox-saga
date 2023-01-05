@@ -8,6 +8,16 @@ public class StatesGame : MonoBehaviour
     private static float musicValue=0.5f;
     private static float soundFXValue=0.5f;
     private static bool isGyroscope;
+     private static PhaseLevel phase = new PhaseLevel(false, false, false, false);
+    private static List<PhaseLevel> phaseLevels = new List<PhaseLevel>(20) { new PhaseLevel(true, false, false, false), phase, phase, phase, phase, phase, phase, phase, phase, phase , phase, phase, phase, phase, phase, phase, phase, phase, phase, phase };
+
+    public static void CallStatesGame()
+    {
+        phaseLevels = new List<PhaseLevel>(20) { new PhaseLevel(true, false, false, false), phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase };
+    }
+
+    public static bool GetPhaseLevel(int value) { return phaseLevels[value].GetIsLevelUnlock(); }
+    public static void SetPhaseLevel(bool value,int index) { phaseLevels[index].SetIsLevelUnlock(value); }
 
     public static bool GetIsGyroscope() { return isGyroscope; }
     public static void SetIsGyroscope(bool value) { isGyroscope = value; }
