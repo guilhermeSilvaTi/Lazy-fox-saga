@@ -24,7 +24,6 @@ public class LoadLevel : MonoBehaviour
     }
     public void MapLevel()
     {
-        Time.timeScale = 1;
         CallOtherLevel(MAP);
     }
     public void MenuLevel()
@@ -41,6 +40,7 @@ public class LoadLevel : MonoBehaviour
     {
         if (!isActive)
         {
+            Time.timeScale = 1;
             isActive = true;
             SceneManager.LoadSceneAsync(nameLevel);
         }
