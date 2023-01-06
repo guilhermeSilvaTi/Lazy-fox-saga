@@ -16,6 +16,7 @@ public class PauseButton : MonoBehaviour
     public void OpenPauseMenu()
     {
         Time.timeScale = 0;
+        if(music.volume > 0.05)
         music.volume = 0.05f;
         windowsPause.SetActive(true);
         buttonPause.SetActive(false);
