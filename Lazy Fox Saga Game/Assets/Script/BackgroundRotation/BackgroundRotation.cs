@@ -11,6 +11,9 @@ public class BackgroundRotation : MonoBehaviour
     [SerializeField]
     GameManager gameManager;
 
+    [SerializeField]
+    AudioSource moveSound;
+
     // Update is called once per frame
     void Update()
     {
@@ -20,9 +23,15 @@ public class BackgroundRotation : MonoBehaviour
 
     private void InputKeyboard()
     {
-        if(Input.GetKey(KeyCode.LeftArrow))
-        transform.Rotate(0, 0, velocity * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(0, 0, velocity * Time.deltaTime);
+            moveSound.Play();
+        }
         if (Input.GetKey(KeyCode.RightArrow))
+        {
             transform.Rotate(0, 0, -velocity * Time.deltaTime);
+            moveSound.Play();
+        }
     }
 }

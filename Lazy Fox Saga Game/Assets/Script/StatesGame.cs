@@ -5,7 +5,7 @@ using UnityEngine;
 public class StatesGame : MonoBehaviour
 {
     private static int score;
-    private static float musicValue=0.5f;
+    private static float musicValue=0.2f;
     private static float soundFXValue=0.5f;
     private static bool isGyroscope;
      private static PhaseLevel phase = new PhaseLevel(false, false, false, false);

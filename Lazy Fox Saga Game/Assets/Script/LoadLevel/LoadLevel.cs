@@ -24,6 +24,7 @@ public class LoadLevel : MonoBehaviour
     }
     public void MapLevel()
     {
+        Time.timeScale = 1;
         CallOtherLevel(MAP);
     }
     public void MenuLevel()

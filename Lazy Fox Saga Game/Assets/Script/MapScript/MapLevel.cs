@@ -20,6 +20,9 @@ public class MapLevel : MonoBehaviour
     [SerializeField]
     float velocity = 2;
 
+    [SerializeField]
+    AudioSource sound;
+
     private void Update()
     {
         CheckDirection();
@@ -56,6 +59,7 @@ public class MapLevel : MonoBehaviour
     {
         if (section < maxSection)
         {
+            sound.Play();
             moveToRight = true;
             moveToLeft = false;
         }
@@ -65,6 +69,7 @@ public class MapLevel : MonoBehaviour
     {
         if (section > 0)
         {
+            sound.Play();
             moveToRight = false;
             moveToLeft = true;
         }

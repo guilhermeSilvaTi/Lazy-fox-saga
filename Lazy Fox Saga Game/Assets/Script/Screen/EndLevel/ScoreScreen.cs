@@ -18,6 +18,13 @@ public class ScoreScreen : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI textScore;
 
+    [SerializeField]
+    AudioSource playScoreSound;
+
+    private void Start()
+    {
+        playScoreSound.Play();
+    }
 
     void Update()
     {

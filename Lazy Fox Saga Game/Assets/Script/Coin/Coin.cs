@@ -8,6 +8,9 @@ public class Coin : MonoBehaviour
     [SerializeField]
     int coinValue = 10;
 
+    [SerializeField]
+    AudioSource sound;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -17,6 +20,7 @@ public class Coin : MonoBehaviour
     private void DisabledCoin()
     {
         StatesGame.SetScore(coinValue);
+        sound.Play();
         this.gameObject.SetActive(false);
     }
 }

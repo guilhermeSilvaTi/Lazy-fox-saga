@@ -15,6 +15,9 @@ public class GameManager : MonoBehaviour
 
     private bool isActiveGame = true;
 
+    [SerializeField]
+    private GameObject UIButton;
+
     public bool GetIsActiveGame() { return isActiveGame; }
     public void SetIsActiveGame(bool value) { isActiveGame = value; }
     public void SetLevel(int value) { level = value; }
@@ -24,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         SetIsActiveGame(false);
         player.StopPlayer();
+        UIButton.SetActive(false);
         yield return new WaitForSeconds(1.0f);
         mainCamera.EndGameActive();
     }
