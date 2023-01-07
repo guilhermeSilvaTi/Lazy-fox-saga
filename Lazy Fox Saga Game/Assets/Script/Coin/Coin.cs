@@ -11,16 +11,24 @@ public class Coin : MonoBehaviour
     [SerializeField]
     AudioSource sound;
 
+    bool isDisabled = false;
+
+    [SerializeField]
+    Animator animator;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-            DisabledCoin();
+        if (collision.gameObject.CompareTag("Player") && !isDisabled)
+           StartCoroutine( DisabledCoin());
     }
 
-    private void DisabledCoin()
+    private IEnumerator DisabledCoin()
     {
+        isDisabled = true;
         StatesGame.SetScore(coinValue);
         sound.Play();
+        animator.SetBool("Coin", true);
+        yield return new WaitForSeconds(1.5f);
         this.gameObject.SetActive(false);
     }
 }
