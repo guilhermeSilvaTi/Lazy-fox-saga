@@ -21,4 +21,5 @@ EditorBuildSettings:
     path: Assets/Scenes/MapScene.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 34f2cf562ca0efe488bd08c647468953, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: cb0960616856b7a428fd5407d992b68e, type: 2}

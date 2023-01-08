@@ -33,7 +33,7 @@ public class CheckBoxScript : MonoBehaviour
         StatesGame.SetIsGyroscope(false);     
     }
     public void TraDeStatesToGyroscope(Toggle toggle)
-    {
+    {   
         StatesGame.SetIsGyroscope(true);
     }
 }
