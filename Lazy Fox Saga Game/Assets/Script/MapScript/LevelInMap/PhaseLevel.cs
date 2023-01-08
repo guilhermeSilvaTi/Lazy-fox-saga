@@ -11,6 +11,8 @@ public class PhaseLevel : MonoBehaviour
     public void SetIsLevelUnlock(bool value) { isLevelUnlock = value; }
     public bool GetIsLevelUnlock() { return isLevelUnlock; }
 
+    public bool GetGoal(int index) { return goal[index]; }
+
     public PhaseLevel(bool valueLevelUnlock,bool goal1, bool goal2, bool goal3)
     {
         isLevelUnlock = valueLevelUnlock;

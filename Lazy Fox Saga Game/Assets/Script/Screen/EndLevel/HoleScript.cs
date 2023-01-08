@@ -14,7 +14,7 @@ public class HoleScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(gameManager.EndGame());
+            StartCoroutine(gameManager.EndGame());         
             sound.Play();
         }
     }

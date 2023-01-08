@@ -149,6 +149,10 @@ MonoBehaviour:
   coinValue: 10
   sound: {fileID: 0}
   animator: {fileID: 7480907311493269376}
+  gameManager: {fileID: 0}
+  spriteRenderer: {fileID: 7480907311493269379}
+  boxCollider2D: {fileID: 7480907311493269377}
+  coin: 0
 --- !u!50 &7480907311493269381
 Rigidbody2D:
   serializedVersion: 4

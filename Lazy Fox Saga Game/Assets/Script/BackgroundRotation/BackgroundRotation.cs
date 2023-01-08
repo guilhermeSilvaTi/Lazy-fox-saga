@@ -48,9 +48,7 @@ public class BackgroundRotation : MonoBehaviour
                 RotationToDirection(-velocity);
             }
         }
-        else
-           player.RestartGravity(); //  if(Input.GetMouseButtonUp(0))
-
+       
   
     }
 

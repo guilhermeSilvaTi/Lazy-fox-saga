@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     Vector2 velocityDeafault;
 
+   private bool isTouchGround;
+
     public void StopPlayer()
     {
         playerRigdbody2D.velocity = Vector2.zero;
@@ -18,14 +20,18 @@ public class Player : MonoBehaviour
 
     public void GravityStop()
     {
+        if(isTouchGround)
          playerRigdbody2D.velocity = Vector2.zero; 
     }
-    public void RestartGravity()
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        // playerRigdbody2D.bodyType = RigidbodyType2D.Dynamic;
-
-        // playerRigdbody2D.gravityScale = gravityDefault;
-      
+        if (collision.gameObject.CompareTag("Ground"))
+            isTouchGround = true;
     }
-
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+            isTouchGround = false;
+    }
 }
