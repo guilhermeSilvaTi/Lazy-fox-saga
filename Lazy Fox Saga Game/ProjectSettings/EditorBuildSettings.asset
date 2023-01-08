@@ -11,15 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 49a3c4322f4c2584f8fd4a6cffc25084
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/MapScene.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1
     path: Assets/Scenes/Level01.unity
     guid: bdf9cd41748a01b4983975a0b9201226
   - enabled: 1
-    path: Assets/Scenes/MapScene.unity
-    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+    path: Assets/Scenes/Level02.unity
+    guid: 3b950c0b26d655c4da6a0c1d7b22ea5b
+  - enabled: 1
+    path: Assets/Scenes/Level03.unity
+    guid: 28f3c405e5a273f4baac5d1d880f9536
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 34f2cf562ca0efe488bd08c647468953, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: cb0960616856b7a428fd5407d992b68e, type: 2}

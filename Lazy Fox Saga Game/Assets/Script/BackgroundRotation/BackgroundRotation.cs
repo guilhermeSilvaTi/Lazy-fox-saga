@@ -16,6 +16,9 @@ public class BackgroundRotation : MonoBehaviour
 
     private float width;
 
+    [SerializeField]
+    Player player;
+
     private void Start()
     {
         width = Screen.width * 0.5f;
@@ -35,51 +38,37 @@ public class BackgroundRotation : MonoBehaviour
         Vector2 comparationPosition = Input.mousePosition; //Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (Input.GetMouseButton(0))
         {
-           
+            player.GravityStop();
             if (width > comparationPosition.x)
             {
-                transform.Rotate(0, 0, velocity * Time.deltaTime);
-                moveSound.Play();
+                RotationToDirection(velocity);
             }
             if (width < comparationPosition.x)
             {
-                transform.Rotate(0, 0, -velocity * Time.deltaTime);
-                moveSound.Play();
+                RotationToDirection(-velocity);
             }
         }
+        else
+           player.RestartGravity(); //  if(Input.GetMouseButtonUp(0))
 
-        /* for (int i = 0; i < Input.touchCount; ++i)
-         {
-             if (Input.GetTouch(i).phase == TouchPhase.Began)
-             {
-               Vector2 comparationPosition = Input.GetTouch(i).position;
-
-                 if (width < comparationPosition.x)
-                 {
-                     transform.Rotate(0, 0, velocity * Time.deltaTime);
-                     moveSound.Play();
-                 }
-                 if (width >= comparationPosition.x)
-                 {
-                     transform.Rotate(0, 0, -velocity * Time.deltaTime);
-                     moveSound.Play();
-                 }
-             }
-         }*/
-
+  
     }
 
     private void InputKeyboard()
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(0, 0, velocity * Time.deltaTime);
-            moveSound.Play();
+            RotationToDirection(velocity);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(0, 0, -velocity * Time.deltaTime);
-            moveSound.Play();
+            RotationToDirection(-velocity);
         }
+    }
+
+    private void RotationToDirection(float getVelocity)
+    {
+        transform.Rotate(0, 0, getVelocity * Time.deltaTime);
+        moveSound.Play();
     }
 }

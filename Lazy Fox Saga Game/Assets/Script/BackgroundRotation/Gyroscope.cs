@@ -13,16 +13,16 @@ public class Gyroscope : MonoBehaviour
 
     private void SuportGyroscope()
     {
-        Input.gyro.enabled = true;
+       
         if (SystemInfo.supportsGyroscope)
         {
-           
+            Input.gyro.enabled = true;
         }
     }
 
     void Update()
     {
-       // if(StatesGame.GetIsGyroscope())
+        if(StatesGame.GetIsGyroscope())
         RotationWithGyroscope();
     }
 
