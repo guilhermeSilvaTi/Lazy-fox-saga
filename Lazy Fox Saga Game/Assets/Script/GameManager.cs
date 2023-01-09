@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     public void SetIsActiveGame(bool value) { isActiveGame = value; }
     public void SetLevel(int value) { level = value; }
     public int GetLevel() { return level;}
-
     public void SetCoinValue(int index) { coinCatch[index] = true; }
 
     public IEnumerator EndGame()

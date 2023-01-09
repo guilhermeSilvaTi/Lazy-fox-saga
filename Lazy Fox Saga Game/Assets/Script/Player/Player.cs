@@ -18,6 +18,12 @@ public class Player : MonoBehaviour
         playerRigdbody2D.bodyType = RigidbodyType2D.Static;
     }
 
+    public void NewPositionPlayer(Vector2 valuePosition)
+    {
+        transform.position = valuePosition;
+    }
+
+
     public void GravityStop()
     {
         if(isTouchGround)
