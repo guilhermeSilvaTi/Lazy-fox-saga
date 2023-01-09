@@ -12,7 +12,10 @@ public class BoardLevel : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        loadLevel.RepeatLevel();
-        soundLose.Play();
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            loadLevel.RepeatLevel();
+            soundLose.Play();
+        }
     }
 }
