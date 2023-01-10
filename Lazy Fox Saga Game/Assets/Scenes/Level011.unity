@@ -1010,6 +1010,10 @@ PrefabInstance:
       propertyPath: m_Mass
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1526384859345272792, guid: bc88b7aee1449a04eb57177185b2cc22, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3477923362823674163, guid: bc88b7aee1449a04eb57177185b2cc22, type: 3}
       propertyPath: m_RootOrder
       value: 9

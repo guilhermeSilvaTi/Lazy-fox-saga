@@ -16,12 +16,10 @@ public class FakeGround : MonoBehaviour
 
     [SerializeField]
     BoxCollider2D boxCollider2D;
-
     private void OnCollisionStay2D(Collision2D collision)
     {
         DisabledGround();
     }
-
     private void DisabledGround()
     {
         timeToDisabled += Time.deltaTime * 2;
@@ -31,8 +29,7 @@ public class FakeGround : MonoBehaviour
             timeToDisabled = 0;
             spriteRenderer.color = new Color(1, 1, 1, alpha);
             if (alpha <= 0)
-                boxCollider2D.enabled = false;
-          
+                boxCollider2D.enabled = false;        
         }
     }
 }
