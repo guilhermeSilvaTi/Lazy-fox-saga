@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class StatesGame : MonoBehaviour
 {
     private static int score;
@@ -13,6 +14,7 @@ public class StatesGame : MonoBehaviour
 
     public static void CallStatesGame()
     {
+        //load
         phaseLevels = new List<PhaseLevel>(20) { new PhaseLevel(true, false, false, false), phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase, phase };
     }
 
@@ -31,5 +33,16 @@ public class StatesGame : MonoBehaviour
     public static int GetScore() { return score; }
     public static void SetScore(int value) { score += value; }
 
+    public static void SetSave(Save save)
+    {
 
+    }
+    public static void SetLoad(Save save)
+    {
+
+    }
+    public static void ResetStatics()
+    {
+
+    }
 }
