@@ -31,7 +31,8 @@ public class GameManager : MonoBehaviour
         SetIsActiveGame(false);
         player.StopPlayer();
         UIButton.SetActive(false);
-        StatesGame.SetPhaseLevel(true, level, coinCatch[0], coinCatch[1], coinCatch[2]);     
+        StatesGame.SetPhaseLevel(true, level, coinCatch[0], coinCatch[1], coinCatch[2]);
+        SaveSystem.SaveGame();
         yield return new WaitForSeconds(1.0f);
         mainCamera.EndGameActive();
     }

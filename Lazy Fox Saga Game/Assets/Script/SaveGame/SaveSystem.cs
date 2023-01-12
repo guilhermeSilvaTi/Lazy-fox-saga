@@ -1,11 +1,9 @@
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SaveSystem : MonoBehaviour
 {
-
     public static void SaveGame()
     {
         Save save = new Save();
@@ -28,6 +26,7 @@ public class SaveSystem : MonoBehaviour
             file.Close();
             StatesGame.SetLoad(save);
             return save;
+
         }
         else
         {

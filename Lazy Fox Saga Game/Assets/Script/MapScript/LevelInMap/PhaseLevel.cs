@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class PhaseLevel : MonoBehaviour
+[System.Serializable]
+public class PhaseLevel 
 {
     private bool[] goal = new bool[3];
     private bool isLevelUnlock = false;
