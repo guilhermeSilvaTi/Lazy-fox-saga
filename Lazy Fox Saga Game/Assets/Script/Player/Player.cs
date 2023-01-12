@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -17,13 +15,10 @@ public class Player : MonoBehaviour
         playerRigdbody2D.velocity = Vector2.zero;
         playerRigdbody2D.bodyType = RigidbodyType2D.Static;
     }
-
     public void NewPositionPlayer(Vector2 valuePosition)
     {
         transform.position = valuePosition;
     }
-
-
     public void GravityStop()
     {
         if(isTouchGround)
