@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class BackgroundRotation : MonoBehaviour
@@ -36,20 +34,22 @@ public class BackgroundRotation : MonoBehaviour
     private void TouchScreen()
     {
         Vector2 comparationPosition = Input.mousePosition; //Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButton(0))
+
+        if (EventSystem.current.currentSelectedGameObject == null)
         {
-            player.GravityStop();
-            if (width > comparationPosition.x)
+            if (Input.GetMouseButton(0))
             {
-                RotationToDirection(velocity);
-            }
-            if (width < comparationPosition.x)
-            {
-                RotationToDirection(-velocity);
+                player.GravityStop();
+                if (width > comparationPosition.x)
+                {
+                    RotationToDirection(velocity);
+                }
+                if (width < comparationPosition.x)
+                {
+                    RotationToDirection(-velocity);
+                }
             }
         }
-       
-  
     }
 
     private void InputKeyboard()
